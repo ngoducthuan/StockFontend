@@ -1,0 +1,759 @@
+
+::ng-deep:root {
+  --green: #67D0BF;
+  --white: #ffffff;
+}
+
+
+
+*{
+  font-family: Satoshi-regular;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+}
+
+.profile {
+  cursor: pointer; /* Hiển thị con trỏ chuột khi di chuột qua khối profile */
+  display: flex;
+  align-items: center;
+  margin: 2rem;
+} 
+
+/* Logout form */
+/* .logout-form {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin-top: 10px;
+  z-index: 1000;
+} */
+.logout-form {
+  position: absolute;
+  top: 80px; /* Điều chỉnh theo nhu cầu */
+  right: 0;
+  width: 300px;
+  margin-right: 1rem;
+  background-color: #fefefe;
+  border-radius: 8px;
+  /*box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);*/
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 6px 20px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  z-index: 1000;
+}
+
+.logout-form img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+.logout-form h3 {
+  text-align: center;
+  font-weight: 800;
+  color: #6c757d;
+  margin: 10px 0 0 5px;
+}
+
+.logout-form .profile-role {
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.logout-options {
+  list-style: none;
+  padding: 0;
+}
+
+.logout-options li {
+  margin-bottom: 10px;
+}
+
+.logout-options a {
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.logout-options a i {
+  margin-right: 10px;
+  color: #6c757d;
+}
+
+.logout-options a:hover {
+  color: #495057;;
+}
+
+.logout-options li:not(:last-child) a {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+/* logout end*/
+.custom-input::placeholder {
+  color: #888888; /* Màu chữ placeholder */
+  font-size: 16px; /* Cỡ chữ placeholder */
+  opacity: 1; /* Đảm bảo không bị mờ */
+}
+
+.search-bar {
+    flex-grow: 0; /* Remove flex-grow to prevent the search bar from expanding */
+    width: 55%; /* Set a fixed width for the search bar, adjust as needed */
+    margin: 0 auto; /* Center the search bar horizontally */
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: #007bff; /* Change this to the desired color */
+    outline: none; /* Remove the default outline */
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-right: 2.5rem;
+}
+
+.profile img {
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 46px;
+    height: 46px;
+}
+
+.profile-name {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.profile-email {
+    font-size: 12px;
+    color: #888;
+}
+
+.wrapper{
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+}
+
+.sidebar{
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  /*height: 300px; /* Example height, adjust as needed */
+  /*width: 250px; /* Example width, adjust as needed */
+}
+
+.sidebar div{
+  width: 120px;
+  height: 60px;
+}
+
+.header{
+  display:  flex;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  border: 1px  solid #ccc;
+  font-weight: bolder !important;
+}
+.header img{
+  cursor: pointer;
+}
+.custom-container{
+  width: 15%;
+}
+.content{
+  display: inline-block;
+  /*height: 1100px;*/
+  width: 85%;
+  border: 1px solid #ccc;
+  position: absolute;
+  right: 0;
+  background-color: #F5F7F9;
+  padding: 20px;
+}
+
+.top-stock{
+  display: flex;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 100%;
+  padding: 16px;
+  height: 160px;
+  align-items: center;
+  margin: 0 0 32px 0;
+  gap: 0 20px;
+}
+
+.chart-field{
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 100%;
+  height: 650px;
+  justify-content: space-between;
+  padding: 16px;
+}
+.stock-chart{
+  width: 80%;
+  height: 600px;
+  background-color: white;
+}
+
+.stock-info{
+  width: 30%;
+  height: 500px;
+  border: 1px solid #ccc;
+  margin:5px 0 0 32px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.ig-chart{
+  width: 100%;
+  height: 100%;
+
+}
+
+.stockBox{
+  padding: 10px 6px;
+  height:120px;
+  width: 20%;
+  border-radius: 12px;
+  background-color: #F9F9F9;
+}
+
+.stock-name{
+  background-color: #000000;
+  width: 80px;
+  display: inline-block;
+  color:white;
+  text-align: center;
+  font-size: 20px;
+  height: 28px;
+  border-radius: 12px;
+}
+
+.stock-status{
+  width: 112px;
+  height: 48px;
+  margin-left: 8px;
+  text-align: right;
+}
+
+
+.box-head{
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.chart-spark{
+  width: 100px;
+
+}
+.box-body{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.green {
+  color: var(--green);
+}
+
+.text-bold{
+  font-weight: bold;
+}
+
+.text-italic{
+  font-style: italic;
+}
+
+.stock-info-name{
+  margin: 8px 0 20px 0;
+}
+
+
+.item-info{
+  margin: 16px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stock-info-name{
+  text-align: center; /* Căn giữa nội dung của phần tử này */
+  width: 100%; /* Đảm bảo phần tử chiếm hết chiều ngang */
+}
+
+/* .item-info .text-center{
+  text-align: center;
+} */
+
+.info-key{
+  color: #6c757d;
+  font-weight: 700;
+}
+
+.info-value{
+  font-weight: 900;
+  color: #4B4B4B;
+}
+
+.export-stock{
+  padding: 12px;
+  background-color:#0d6efd ;
+  height: 70%;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+
+.export-stock:hover{
+  opacity: 0.9;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav{
+  width: 100%;
+}
+.nav-pills .nav-link {
+  font-weight: 700; /* Độ đậm cao hơn (700 tương đương với bold) */
+  color: #6c757d;
+  background-color: #ffff; /* Màu nền sáng */
+}
+
+.nav-pills .nav-link {
+  font-weight: 700; /* Độ đậm cao hơn (700 tương đương với bold) */
+  color: #6c757d;
+  background-color: #ffff; /* Màu nền sáng */
+}
+
+.nav-pills .nav-link:hover {
+  color: #ffffff;
+  background-color: #c0c4c8;
+}
+
+.content-area {
+  padding: 20px; /* Add padding to push content inside */
+}
+
+.sidebar{
+  padding-left: 10px;
+  padding-bottom: 0;
+}
+
+.sidebar-sub{
+  padding-left: 20px;
+}
+.tab-content{
+  padding: 0;
+}
+.tab-pane {
+  width: 180px;
+  padding: 5px;
+  margin-left: 10px;
+ /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better appearance */
+  /*border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+/*Content when click compare*/
+.stock-label {
+  color: #6c757d; /* Màu sắc cho nhãn (label) */
+  padding: 0;
+  font-weight: 600; /* Đậm chữ */
+}
+
+.no-margin {
+  margin-bottom: 5px !important;
+}
+
+.btn-info{
+  margin-top: 10px;
+  font-weight: 550;
+  width: 100%;
+  background-color: #6c757d;
+  color: #ffffff; /* Màu chữ trắng */
+  border: 1px solid #6c757d; /* Viền xám đậm */
+}
+
+.btn-info:hover {
+  background-color: #5a6268; /* Màu xám đậm hơn khi hover */
+  color: #ffffff; /* Màu chữ vẫn là màu trắng */
+  border-color: #adb5bd; /* Viền xám nhạt hơn khi hover */
+}
+
+/* Form alert error*/
+/* The Modal (background) */
+.modal {
+  display: block; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  /*border: 2px solid #888;*/
+  width: 70%;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3{
+  flex-grow: 1;
+  text-align: center;
+  padding: 10px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.modal-content .close{
+}
+
+.modal-content p{
+  font-weight: 600;
+  color: #4B4B4B;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 0px 20px;
+  background-color: rgba(220, 20, 60, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 10px;
+}
+
+.modal-body {
+  padding: 10px 20px;
+  margin: 20px 0;
+}
+
+.btn {
+  background-color: rgba(220, 20, 60, 0.9);
+  color: #fefefe;
+  border: none;
+  padding: 8px 25px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  font-weight: 700;
+  background-color: rgba(255, 192, 203, 0.9); /* Nền hồng nhạt khi hover */
+  color: #c0392b; /* Chữ đỏ đậm khi hover */
+}
+
+
+/* Predict Alert */
+/* Modal container */
+#predictForm {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+}
+
+/* Modal content */
+.predict-content {
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #fefefe;
+  margin: 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 450px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal header */
+/* Modal header */
+.predict-header {
+  display: flex;
+  padding: 15px 20px;
+  background-color: #4CAF50;
+  border-radius: 5px;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  position: relative; /* Allows the close button to be positioned correctly */
+}
+
+/* Close button */
+.predict-header .close {
+  position: absolute; /* Position the close button */
+  right: 10px; /* Align to the right */
+  top: 0;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.predict-header .close:hover,
+.predict-header .close:focus {
+  color: #000;
+}
+
+.predict-header h3 {
+  margin: 0;
+  font-weight: 700;
+  color: #fefefe;
+  text-align: center; /* Ensure the text inside the header is centered */
+}
+
+/* Modal body */
+.predict-body {
+  padding: 10px 20px;
+  margin: 20px 0;
+}
+
+/* Modal footer */
+.predict-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  border-top: 1px solid #eee;
+}
+
+/* Buttons */
+#okButtonPre, #cancelButtonPre {
+  width: 100px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px; /* Add spacing between buttons */
+}
+
+#okButtonPre:hover {
+  background-color: #45a049;
+}
+
+#cancelButtonPre {
+  background-color: #f44336; /* Red for Cancel */
+}
+
+#cancelButtonPre:hover {
+  background-color: #e53935;
+}
+
+li:hover {
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the <li> */
+}
+
+/*Reponsive*/
+/* Initially hide the mobile icon */
+.profile-icon {
+  display: none;
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+    .profile-info,
+    .profile img {
+        display: none;
+    }
+    .profile-icon {
+        display: block;
+        font-size: 30px;
+        margin-right: 1rem;
+        padding: 0.5rem;
+        color: #888;
+    }
+
+    .header{
+       position: fixed; /* Cố định header ở vị trí trên cùng */
+       top: 0; /* Canh trên cùng */
+       left: 0; /* Canh trái */
+       z-index: 1000;
+       width: 100%;
+       padding: 0px;
+       margin: 0;
+       background: #ffffff;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       box-sizing: border-box;
+   }
+    .wrapper {
+       position: relative; /* Đảm bảo khối content không lấn át header */
+       z-index: 1; /* Giá trị thấp hơn header để content nằm dưới */
+       padding-top: 5rem;
+       width: 100%;
+   }
+
+    .logout-form{
+       margin-right: 0.5rem;
+       margin-top: 0.7rem;
+    }
+
+    .h2-header{
+        display: none;
+    }
+
+    body {
+       overflow-x: auto; /* Cho phép cuộn ngang phần nội dung */
+    }
+
+    .custom-container{
+        display: none;
+    }
+    /*Hidden Sidebar*/
+    .sidebar{
+        display: none;
+    }
+    /*Hiden content area*/
+    .top-stock{
+        width: 100%;
+        margin-top: 2rem;
+        overflow-x: scroll; /* Enable horizontal scroll */
+        white-space: nowrap; /* Prevent wrapping of stockBox items */
+    }
+
+    .stockBox{
+      width: 100vh;
+      height: auto;
+      display: inline-block;
+    }
+
+    .stock-info{
+        position: sticky;
+        top: 0;
+        width: 92vw;
+        top: 45rem;
+        margin: 0;
+        margin-top: 3rem;
+        overflow-y: auto;
+    }
+    .chart-field {
+        background: #eee;
+        width: 100%; /* Đảm bảo chiều rộng là 100% */
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .stock-chart {
+        width: 100%; /* Đảm bảo chiều rộng là 100% */
+        flex-grow: 1;
+        overflow-x: auto;
+        max-width: 1500px; /* Giới hạn chiều rộng tối đa */
+        margin: 0 auto; /* Căn giữa trong container */
+    }
+    
+    .ig-chart {
+        width: 100vh; /* Đảm bảo chiều rộng là 100% */
+        height: 94%; /* Chiều cao như bạn đã chỉ định */
+    }
+
+    .content{
+        width: 100vw;
+        padding: 0;
+        border: none;
+        display: flex;
+        flex-direction: column;
+    }
+    .stock-content{
+      width: 100vw;
+      padding: 0.4rem;
+    }
+    .igx-financial-chart{
+        width: 100vw;
+    }
+    .profile{
+      margin: 0;
+    }
+}

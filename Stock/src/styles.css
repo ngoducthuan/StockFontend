@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+*{
+  font-family: Satoshi-Black;
+}
+
+body {
+  margin: 0; /* Set the margin to 0 to remove the default margin */
+}
+
+@font-face {
+  font-family: 'Satoshi-Black';
+  src: url('./assets/Fonts/OTF/Satoshi-Black.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Satoshi-BlackItalic';
+  src: url('./assets/Fonts/OTF/Satoshi-BlackItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Satoshi-Bold';
+  src: url('./assets/Fonts/OTF/Satoshi-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Satoshi-BoldItalic';
+  src: url('./assets/Fonts/OTF/Satoshi-BoldItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Satoshi-Italic';
+  src: url('./assets/Fonts/OTF/Satoshi-Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Satoshi-Light';
+  src: url('./assets/Fonts/OTF/Satoshi-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Satoshi-LightItalic';
+  src: url('./assets/Fonts/OTF/Satoshi-LightItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Satoshi-Medium';
+  src: url('./assets/Fonts/OTF/Satoshi-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Satoshi-Regular';
+  src: url('./assets/Fonts/OTF/Satoshi-Regular.otf') format('opentype');
+}

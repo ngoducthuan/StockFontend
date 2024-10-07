@@ -1,0 +1,658 @@
+.container {
+    /* display: flex;
+    justify-content: center;
+    align-items: flex-start; */
+    width: 100%;
+    height: 100vh;
+}
+
+.profile-settings {
+    display: flex;
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* width: 100%; */
+}
+
+.profile-user{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.profile-picture {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    background-color: #f8f9fc;
+    padding: 40px;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Balance credit */
+.balance-section {
+    margin-top: 15px;
+    background-color: #f8f9fc;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+}
+
+.balance-amount{
+    padding: 10px;
+    font-weight: 700;
+    color: #495057;
+    margin-bottom: 10px;
+}
+
+.deposit-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 700;
+    background: linear-gradient(to right, #007BFF, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.upload-btn {
+    background: linear-gradient(to right, #007BFF, #0056b3);
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.upload-btn:hover {
+    background-color: #0056b3;
+}
+
+.profile-picture p {
+    font-size: 16px;
+    font-weight: 700;
+    color: #6c757d;
+}
+
+.account-details {
+    flex: 2;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+}
+
+.account-details h3 {
+    text-align: center;
+    font-weight: 600;
+    color: #495057;
+}
+
+.balance-section h3 {
+    text-align: center;
+    font-weight: 600;
+    color: #4CAF50;
+}
+
+.balance-section p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #495057;
+}
+
+.balance-text {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #495057;
+}
+
+.form-group input {
+    margin: 8px 0;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #495057;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-row div {
+    flex: 1;
+}
+
+.save-btn {
+    background: linear-gradient(to right, #007BFF, #0056b3);
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background-color: #0056b3;
+}
+
+
+::ng-deep:root {
+  --green: #67D0BF;
+  --white: #ffffff;
+}
+
+*{
+  font-family: Satoshi-regular;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+}
+
+.profile {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+} 
+
+/* Logout form */
+.logout-form {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 300px;
+  margin-right: 1rem;
+  background-color: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 6px 20px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  z-index: 1000;
+}
+
+.logout-form img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+.logout-form h3 {
+  text-align: center;
+  font-weight: 800;
+  color: #6c757d;
+  margin: 10px 0 0 5px;
+}
+
+.logout-form .profile-role {
+  text-align: center;
+  color: #777;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.logout-options {
+  list-style: none;
+  padding: 0;
+}
+
+.logout-options li {
+  margin-bottom: 10px;
+}
+
+.logout-options a {
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.logout-options a i {
+  margin-right: 10px;
+  color: #6c757d;
+}
+
+.logout-options a:hover {
+  color: #495057;;
+}
+
+.logout-options li:not(:last-child) a {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* logout end*/
+.custom-input::placeholder {
+  color: #888888;
+  font-size: 16px;
+  opacity: 1;
+}
+
+.search-bar {
+    flex-grow: 0;
+    width: 55%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-right: 2.5rem;
+}
+
+.profile-picture {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 46px;
+    height: 46px;
+}
+
+.profile-name {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.profile-email {
+    font-size: 16px;
+    color: #888;
+}
+
+.wrapper{
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+}
+
+.sidebar{
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.sidebar div{
+  width: 120px;
+  height: 60px;
+}
+
+.header{
+  display:  flex;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  border: 1px  solid #ccc;
+  font-weight: bolder !important;
+}
+.header img{
+  cursor: pointer;
+}
+.custom-container{
+  width: 15%;
+}
+.content{
+  display: inline-block;
+  width: 85%;
+  border: 1px solid #ccc;
+  position: absolute;
+  right: 0;
+  background-color: #F5F7F9;
+  padding: 15px 0 0 0;
+}
+
+.nav{
+  width: 100%;
+}
+.nav-pills .nav-link {
+  font-weight: 700;
+  color: #6c757d;
+  background-color: #ffff;
+}
+
+.nav-pills .nav-link {
+  font-weight: 700;
+  color: #6c757d;
+  background-color: #ffff;
+}
+
+.nav-pills .nav-link:hover {
+  color: #ffffff;
+  background-color: #c0c4c8;
+}
+
+.content-area {
+  padding: 20px;
+}
+
+.sidebar{
+  padding-left: 10px;
+  padding-bottom: 0;
+}
+
+.sidebar-sub{
+  padding-left: 20px;
+}
+
+.tab-content{
+  padding: 0;
+}
+
+.tab-pane {
+  width: 180px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+li:hover {
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the <li> */
+}
+
+/* Payment Form */
+/* Payment container */
+#paymentForm {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+}
+
+/* Payment content */
+.payment-content {
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #fefefe;
+  margin: 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal header */
+/* Modal header */
+.payment-header {
+  display: flex;
+  padding: 15px 20px;
+  background: linear-gradient(to right, #007BFF, #0056b3);;
+  border-radius: 5px;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  position: relative; /* Allows the close button to be positioned correctly */
+}
+
+/* Close button */
+.payment-header .close {
+  position: absolute; /* Position the close button */
+  right: 10px; /* Align to the right */
+  top: 0;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.payment-header .close:hover,
+.payment-header .close:focus {
+  color: #000;
+}
+
+.payment-header h3 {
+  margin: 0;
+  font-weight: 700;
+  color: #fefefe;
+  text-align: center; /* Ensure the text inside the header is centered */
+}
+
+/* Modal body */
+.payment-body {
+  display: flex;
+  align-items: stretch;
+  background-color: #eeeeee;
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+
+.QR-generate {
+  width: 100%;
+  background: #ffffff;
+  justify-content: center;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.QR-generate input {
+  width: 80%;
+  padding: 10px;
+  border: 2px solid #eeeeee;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.QR-generate button{
+  width: 80%;
+  font-weight: 600;
+  background: linear-gradient(to right, #007BFF, #0056b3);;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 20px 0;
+}
+
+/* Modal footer */
+.payment-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  border-top: 1px solid #eee;
+}
+
+/* Buttons */
+#okButtonPre, #cancelButtonPre {
+  width: 100px;
+  background: linear-gradient(to right, #007BFF, #0056b3);;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px; /* Add spacing between buttons */
+}
+
+#okButtonPre:hover {
+  background: #45a049;
+}
+
+#cancelButtonPre {
+  background: #f44336; /* Red for Cancel */
+}
+
+#cancelButtonPre:hover {
+  background-color: #e53935;
+}
+
+li:hover {
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the <li> */
+}
+
+.card-img-top{
+  width: 300px;
+}
+
+.profile-icon{
+  display: none;
+}
+
+.profile{
+  margin: 2rem;
+}
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  .profile-info,
+  .profile img {
+      display: none;
+  }
+  .profile-icon {
+      display: block;
+      font-size: 30px;
+      margin-right: 1rem;
+      padding: 0.5rem;
+      color: #888;
+  }
+
+  .header{
+     position: fixed; /* Cố định header ở vị trí trên cùng */
+     top: 0; /* Canh trên cùng */
+     left: 0; /* Canh trái */
+     z-index: 1000;
+     width: 100%;
+     padding: 0px;
+     margin: 0;
+     background: #ffffff;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     box-sizing: border-box;
+ }
+  .wrapper {
+     position: relative; /* Đảm bảo khối content không lấn át header */
+     z-index: 1; /* Giá trị thấp hơn header để content nằm dưới */
+     padding-top: 5rem;
+     width: 100%;
+ }
+
+  .logout-form{
+     margin-right: 0.5rem;
+     margin-top: 0.7rem;
+  }
+
+  .h2-header{
+      display: none;
+  }
+
+  body {
+     overflow-x: auto; /* Cho phép cuộn ngang phần nội dung */
+  }
+
+  .custom-container{
+      display: none;
+  }
+  /* Styles for mobile view */
+
+  .profile-settings {
+      flex-direction: column;
+      margin-bottom: 2rem;
+  }
+
+  .profile-user, .account-details {
+      margin: 0;
+      padding: 0;
+  }
+
+  .account-details{
+    padding: 1rem 1rem;
+  }
+
+  .wrapper{
+    width: 100vw;
+  }
+
+  .container{
+    width: 100%;
+    height: auto;
+  }
+
+  .content{
+    width: 100%;
+  }
+
+  .card-img-top{
+    width: 15rem;
+  }
+  .payment-body{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+  }
+  .QR-generate{
+    padding: 1rem;
+    margin: 0;
+  }
+  .profile{
+    margin: 0;
+  }
+}

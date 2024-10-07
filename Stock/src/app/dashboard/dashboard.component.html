@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header" style="display: flex; padding: 20px">
+            <img src="../../assets/pic/logo.jpg" alt="" style="width: 70px; height: 70px; margin-left: 5px">
+            <h3 style="width: 120rem; font-weight: 600; font-family: 'Roboto', sans-serif; margin-left: 10px; background: linear-gradient(to right, #75AD35, #4A5A72);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Stock Analysis</h3>
+            <div class="container">
+                <div class="row justify-content-center">
+                </div>
+            </div>
+            <div class="profile" id="profile" (click)="openLogoutForm()">
+                <img src="../../assets/pic/user1.jpg" alt="">
+                <div class="profile-info">
+                    <div class="profile-name">{{ userInfo.firstname }} {{ userInfo.lastname }}</div>
+                    <div class="profile-email">{{userInfo.email}}</div>
+                </div>
+                <i class="fas fa-bars profile-icon"></i>
+            </div>
+            <!-- Logout Form -->
+            <div class="logout-form" *ngIf="isLogoutFormOpen">
+                <img src="../../assets/pic/user1.jpg" alt="Profile Image" class="profile-img">
+                <h3>{{ userInfo.firstname }} {{ userInfo.lastname }}</h3>
+                <p class="profile-role">Customer</p>
+                <ul class="logout-options">
+                    <li><a href="/user"><i class="fas fa-user"></i> My Profile</a></li>
+                    <li><a href="/user"><i class="fas fa-edit"></i> Edit Profile</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Inbox</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+                    <li><a (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <table class="table stock-table table-striped table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col" rowspan="2">Mã CK</th>
+                        <th scope="col" rowspan="2">T.C</th>
+                        <th scope="col" rowspan="2">Trần</th>
+                        <th scope="col" rowspan="2">Sàn</th>
+                        <th scope="col" colspan="6"> Bên mua</th>
+                        <th scope="col" colspan="6"> Bên bán</th>
+                        <th scope="col" rowspan="2">Tổng KL</th>
+                        <th scope="col" rowspan="2">Dư mua</th>
+                        <th scope="col" rowspan="2">Dư bán</th>
+                        <th scope="col" rowspan="2">TB</th>
+                        <th scope="col" rowspan="2">Cao</th>
+                        <th scope="col" rowspan="2">Thấp</th>
+                    </tr>
+                    <tr>
+                        <th>Giá 3</th>
+                        <th>KL 3</th>
+                        <th>Giá 2</th>
+                        <th>KL 2</th>
+                        <th>Giá 1</th>
+                        <th>KL 1</th>
+
+                        <th>Giá 1</th>
+                        <th>Giá 1</th>
+                        <th>Giá 2</th>
+                        <th>KL 2</th>
+                        <th>Giá 3</th>
+                        <th>KL 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of stockList; let id = index">
+                        <th scope="row" (click)="getStockHistory($event, id)" style="cursor: pointer;">{{i.stockCode}}
+                        </th>
+                        <td [ngClass]="{'even-row': id % 2 !== 0, 'odd-row': id % 2 === 0}" style="color: #ffd900;">
+                            {{i.tc}}</td>
+                        <td [ngClass]="{'even-row': id % 2 !== 0, 'odd-row': id % 2 === 0}" style="color: #ff25ff;">
+                            {{i.tran}}</td>
+                        <td [ngClass]="{'even-row': id % 2 !== 0, 'odd-row': id % 2 === 0}" style="color: #1eeeee;">
+                            {{i.san}}</td>
+
+                        <td class="{{i.mua1 < i.tc ? 'text-red' : 'text-green'}}">{{i.mua1}}</td>
+                        <td class="{{i.mua1 < i.tc ? 'text-red' : 'text-green'}}">{{i.klm1}}</td>
+                        <td class="{{i.mua2 < i.tc ? 'text-red' : 'text-green'}}">{{i.mua2}}</td>
+                        <td class="{{i.mua2 < i.tc ? 'text-red' : 'text-green'}}">{{i.klm2}}</td>
+                        <td class="{{i.mua3 < i.tc ? 'text-red' : 'text-green'}}">{{i.mua3}}</td>
+                        <td class="{{i.mua3 < i.tc ? 'text-red' : 'text-green'}}">{{i.klm3}}</td>
+                        <td class="{{i.ban1 < i.tc ? 'text-red' : 'text-green'}}">{{i.ban1}}</td>
+                        <td class="{{i.ban1 < i.tc ? 'text-red' : 'text-green'}}">{{i.klb1}}</td>
+                        <td class="{{i.ban2 < i.tc ? 'text-red' : 'text-green'}}">{{i.ban2}}</td>
+                        <td class="{{i.ban2 < i.tc ? 'text-red' : 'text-green'}}">{{i.klb2}}</td>
+                        <td class="{{i.ban3 < i.tc ? 'text-red' : 'text-green'}}">{{i.ban3}}</td>
+                        <td class="{{i.ban3 < i.tc ? 'text-red' : 'text-green'}}">{{i.klb3}}</td>
+                        <td>{{i.tongKL}}</td>
+                        <td></td>
+                        <td></td>
+                        <td class="{{i.mua2 < i.tc ? 'text-red' : 'text-green'}}">{{i.mua2}}</td>
+                        <td class="{{i.mua3 < i.tc ? 'text-red' : 'text-green'}}">{{i.mua3}}</td>
+                        <td class="{{i.ban3 < i.tc ? 'text-red' : 'text-green'}}">{{i.klb3}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

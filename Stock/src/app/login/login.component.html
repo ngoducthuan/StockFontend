@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Animated Login Form | CodingNepal</title>
+  </head>
+  <body>
+    <div class="background-overlay"></div>
+    <div class="center" style="margin:auto;">
+        <h1 *ngIf="showLoginForm">Login</h1>
+        <h1 *ngIf="!showLoginForm">Register</h1>
+
+        <!-- Form Login -->
+        <form *ngIf="showLoginForm" (ngSubmit)="onLogin()">
+            <div class="txt_field">
+            <input type="text" [(ngModel)]="username" name="username" required>
+            <span [ngClass]="{'error': errorMessage}"></span>
+            <label>Username</label>
+            </div>
+            <div class="txt_field">
+            <input type="password" [(ngModel)]="password" name="password" required>
+            <span [ngClass]="{'error': errorMessage}"></span>
+            <label>Password</label>
+            </div>
+            <div *ngIf="errorMessage" class="error-message" style="margin-bottom: 10px; padding: 5px;">{{ errorMessage }}</div>
+            <div class="pass">Forgot Password?</div>
+            <input type="submit" value="Login">
+            <div class="signup_link">
+            Not a member? <a (click)="toggleForm()">Register</a>
+            </div>
+        </form>
+
+        <!-- Form Register -->
+        <form *ngIf="!showLoginForm" (ngSubmit)="onRegister()">
+            <div class="txt_field">
+            <input type="text" [(ngModel)]="username_reg" name="username_reg"  required>
+            <span></span>
+            <label>Username</label>
+            </div>
+            <div class="txt_field">
+            <input type="password" [(ngModel)]="password_reg" name="password_reg" required>
+            <span></span>
+            <label>Password</label>
+            </div>
+            <div class="txt_field">
+            <input type="email" [(ngModel)]="email" name="email" required>
+            <span></span>
+            <label>Email</label>
+            </div>
+            <div class="txt_field">
+            <input type="text" [(ngModel)]="firstname" name="firstname" required>
+            <span></span>
+            <label>First Name</label>
+            </div>
+            <div class="txt_field">
+            <input type="text" [(ngModel)]="lastname" name="lastname" required>
+            <span></span>
+            <label>Last Name</label>
+            </div>
+            <div class="txt_field">
+              <input type="text" [(ngModel)]="phone" name="phone" required>
+              <span></span>
+              <label>Phone</label>
+            </div>
+            <input type="submit" value="Register">
+            <div class="signup_link">
+            Already a member? <a (click)="toggleForm()">Login</a>
+            </div>
+        </form>
+    </div>
+  </body>
+</html>
